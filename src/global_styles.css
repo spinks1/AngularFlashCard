@@ -1,0 +1,141 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.card-flip {
+  perspective: 1000px;
+  height: 400px;
+}
+
+.card-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-flip.flipped .card-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.card-front {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  color: #2d3748;
+}
+
+.card-back {
+  background: linear-gradient(145deg, #f7fafc, #edf2f7);
+  color: #2d3748;
+  transform: rotateY(180deg);
+}
+
+.progress-bar {
+  transition: width 0.3s ease;
+}
+
+.btn-custom {
+  background: linear-gradient(145deg, #4f46e5, #7c3aed);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.btn-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+  color: white;
+}
+
+.category-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.beginner {
+  background: linear-gradient(145deg, #10b981, #059669);
+  color: white;
+}
+
+.intermediate {
+  background: linear-gradient(145deg, #f59e0b, #d97706);
+  color: white;
+}
+
+.advanced {
+  background: linear-gradient(145deg, #ef4444, #dc2626);
+  color: white;
+}
+
+code {
+  background: #1a202c;
+  color: #68d391;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+pre {
+  background: #1a202c;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.search-box {
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.75rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-box:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .card-flip {
+    height: 350px;
+  }
+  
+  .card-front, .card-back {
+    padding: 1.5rem;
+  }
+}
