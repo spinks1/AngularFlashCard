@@ -59,7 +59,7 @@ class Program
     {
         //this is object
         Employee employee = new Employee();
-        employee.SetName("John", "Grande");
+        employee.SetName("Fred", "Cabello");
         employee.Display();
     }
 }</code></pre>`,
@@ -746,9 +746,9 @@ The following information can be retrieved using reflection:
     if (!query.trim()) {
       return this.flashcards;
     }
-    
+
     const searchTerm = query.toLowerCase();
-    return this.flashcards.filter(card => 
+    return this.flashcards.filter(card =>
       card.question.toLowerCase().includes(searchTerm) ||
       card.answer.toLowerCase().includes(searchTerm) ||
       card.tags.some(tag => tag.toLowerCase().includes(searchTerm))
